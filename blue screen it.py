@@ -1,7 +1,3 @@
-test="My name is Mrs Forster and i teach computing"
-print(test[0])
-
-
 
 
 
