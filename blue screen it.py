@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import tkinter as tk
+
+def show_crash_style_demo():
+    popup = tk.Toplevel(root)
+    popup.title("Crash Style Demo")
+    popup.attributes("-fullscreen", True)
+    popup.configure(bg="#0078D7", cursor="none")
+
+    container = tk.Frame(popup, bg="#0078D7")
+    container.pack(fill="both", expand=True, padx=40, pady=40)
+
+    sad_face = tk.Label(
+        container,
+        text=":(",
+        bg="#0078D7",
+        fg="white",
+        font=("Segoe UI", 120),
+        anchor="w"
+    )
+    sad_face.pack(anchor="nw")
+
+    main_text = (
+        "Your PC ran into a problem that it couldn't handle,\n"
+        "and it now needs to restart.\n"
+    )
+
+    main_label = tk.Label(
+        container,
+        text=main_text,
+        bg="#0078D7",
+        fg="white",
+        font=("Segoe UI", 28),
+        justify="left",
+        anchor="nw"
+    )
+    main_label.pack(anchor="nw", pady=(10, 30))
+
+    bottom_label = tk.Label(
+        container,
+        text="You can search for the error online: HAL INITIALIZATION FAILED.",
+        bg="#0078D7",
+        fg="white",
+        font=("Segoe UI", 14),
+        justify="left",
+        anchor="nw"
+    )
+    bottom_label.pack(anchor="nw")
+
+    popup.bind("<Escape>", lambda e: root.destroy())
+
+root = tk.Tk()
+root.withdraw()              # hide main window
+root.after(0, show_crash_style_demo)  # open immediately
+
+root.mainloop()
